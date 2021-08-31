@@ -1,32 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-{% if object_list %}
-    <table border="1">
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h1>Данные из "index"</h1>
 
-        <tr>
-            <th>Id</th>
-            <th>Дата</th>
-            <th>Имя</th>
-            <th>Телефон</th>
-        </tr>
-    {% for obj in object_list %}}
-        <tr>
-            <th>{{obj.id}}</th>
-            <th>{{obj.order_dt}}</th>
-            <th>{{obj.order_name}}</th>
-            <th>{{obj.order_phone}}</th>
-        </tr>
-    {% endfor %}
+<img src="{% static 'img/1.jpg' %}" height="300">
+{% include 'index_old.html' %}
 
-    </table>
-{% else %}
-Заказов нет!
-{% endif %}
-
-</body>
-</html>
+{% endblock %}
